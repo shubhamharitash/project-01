@@ -1,0 +1,160 @@
+﻿﻿<html>
+<head>
+	<!-- import jQuery -->
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js">
+</script>
+<style>
+html, body 
+{ 	
+font-family: "Roboto", Sans-serif; 	
+color: #333; 	
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; 
+} 
+body 
+{ 
+font-family: "Roboto", Sans-serif !important; 	font-weight: 300; 	
+line-height: 2.1em; 	
+letter-spacing: 1.1px; 	font-size: 1rem; 	
+color: #333;
+ } 
+h2 
+{ 	
+color: #707070; 	
+font-size: 28px !important; 
+font-weight: 300 !important; 	
+text-transform: uppercase; 
+line-height: 1.3em !important;
+ letter-spacing: 2.7px !important;
+ } 
+h5 { 
+color: #f59233; 
+font-size: 21px; 
+font-weight: 500; 	
+line-height: 1.2em; 	
+letter-spacing: 0.7px; 
+} 
+
+.night{
+    background:black;
+    color:white;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<title>
+EachSketch
+</title>
+
+</head>
+<body>
+<a href="index.html"> Home</a>
+&nbsp;
+<a href="aboutme.html"> About me </a>
+&nbsp;
+<a href="contact.html">Contact me</a>
+&nbsp;
+<a href="gall.html">Image Gallery</a>
+&nbsp;
+<hr></hr>
+
+	<button class="btn btn-default js-go-day">DAY MODE</button>
+
+				<button class="btn btn-default js-go-night">NIGHT MODE</button>
+
+
+
+
+<h1>E A C H S K E T C H</h1>
+<h2>Welcome to my Art Studio!</h2>
+<p> Each sketch has a story behind it. Look closely. You might see through it. </p>
+<h5> Let's look at them to find out their stories</h5>
+
+<div class="row">
+  <div class="column" style="background-color:#D3D3D3;">
+    <h2 style="color:#000000;"><i>Eyes</i></h2>
+    <p>The eyes are a window to your soul.Eyes speak. They speak when the mouth doesn't.Eyes convey emotions that sometimes even we fail to convey.</p>
+  </div>
+  <div class="column" style="background-color:#D3D3D3;">
+    
+<img src="https://scontent-lht6-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/96614569_249907319660537_3395627649264612087_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_cat=105&_nc_ohc=zPP3gqZ9DywAX_eWwcw&oh=6520b5065174f558769386806ad1c021&oe=5EF00AC0&ig_cache_key=MjMwNjc0ODE5NDAyMzc1OTkxNA%3D%3D.2" width="60%"/>
+  </div>
+</div>
+
+
+<br>
+
+
+<div class="row">
+  <div class="column" style="background-color:#D3D3D3;">
+    <h2 style="color:#000000;"><i>Face</i></h2>
+    <p>Outward appearances often mislead the world. Face is nothing but a structured combination of our sense organs.Face represents more than just features.</p>
+  </div>
+  <div class="column" style="background-color:#D3D3D3;">
+    <h2 style="color:black;"><i></i></h2>
+<img src="https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-15/e35/p240x240/97363830_169170231202972_8979653876791446330_n.jpg?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=104&_nc_ohc=58x2eV7N0WkAX9G8TvY&oh=dcd7d5c1b43ea84d38c1ba4ecab10dba&oe=5EEDB25B&ig_cache_key=MjMxMjQ3MTg2OTA1NDEzMDQ0OA%3D%3D.2" width="60%" height="70%"/>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="column" style="background-color:#D3D3D3;">
+    <h2 style="color:#000000;"><i>Features</i></h2>
+    <p>Life is a mystery. It's a puzzle you need to solve!</p>
+  </div>
+  <div class="column" style="background-color:#D3D3D3;">
+    <h2 style="color:black;"><i></i></h2>
+<img src="https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/92953581_219834335909901_635515278363046888_n.jpg?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=109&_nc_ohc=-LS_OqxMCvsAX-vd12n&oh=695578cacef35120d35c16c02e6bee4a&oe=5EEE11FB&ig_cache_key=MjI4NjMxNjE5Njc5Mzc0Nzc2OA%3D%3D.2" width="60%" height="90%"/>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="column" style="background-color:#D3D3D3;">
+    <h2 style="color:#000000;"><i>Beauty</i></h2>
+    <p>Beauty lies in the face of the beholder</p>
+  </div>
+  <div class="column" style="background-color:#D3D3D3;">
+    <h2 style="color:black;"><i></i></h2>
+<img src="img9.jpg" width="60%" height="90%"/>
+  </div>
+</div>
+<br>
+
+	<script>
+
+$('.js-go-night').click(function(){
+$('body').addClass('night');
+$('div').addClass('night');
+$('a').addClass('night');
+$('p').addClass('night');
+		});
+$('.js-go-day').click(function(){
+$('body').removeClass('night');
+$('div').removeClass('night');
+$('a').removeClass('night');
+$('p').removeClass('night');
+		});
+
+</script>
+</body>
+</html>

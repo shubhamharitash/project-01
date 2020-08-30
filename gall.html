@@ -1,0 +1,160 @@
+﻿<html>
+<head><title>Image Gallery</title>
+<style> 
+html, body 
+{ 	
+font-family: "Roboto", Sans-serif; 	color: #333; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; 
+} 
+body { 	
+font-family: "Roboto", Sans-serif !important; 	font-weight: 300;
+ line-height: 2.1em;
+ letter-spacing: 1.1px; 
+font-size: 1rem; 	
+color: #333; } 
+h2
+ { 	
+color: #707070; 	
+font-size: 28px !important; 
+font-weight: 300 !important; 	
+text-transform: uppercase; 
+line-height: 1.3em !important;
+letter-spacing: 2.7px !important;
+ } 
+h5 
+{ 
+	color: #f59233; 
+	font-size: 21px; 
+	font-weight: 500; 	
+line-height: 1.2em; 	
+letter-spacing: 0.7px; 
+} 
+
+
+.crop-img
+{
+  max-height:150px;
+  max-width:40%;
+  margin-bottom: 10px;
+}
+
+.large-img
+{
+  max-height:100%;
+  display:block;
+  margin:auto;
+  max-width:100%;
+  margin-top: 10px;
+position: relative;
+  display: none;
+}
+
+
+</style>
+	<!-- import jQuery -->
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+<a href="each.html"> Home</a>
+&nbsp;
+<a href="aboutme.html"> About me </a>
+&nbsp;
+<a href="contact.html">Contact me</a>
+&nbsp;
+<a href="gall.html">Image Gallery</a>
+<hr></hr>
+<h1>Image Gallery</h1>
+
+<button id="backward">Previous</button>
+
+
+	<img class="crop-img" id="img1" src="https://scontent-lht6-1.cdninstagram.com/v/t51.2885-15/e35/s240x240/95067791_158185845715985_6324126728829420390_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_cat=105&_nc_ohc=vTB3jyAacL4AX_QcQ1t&oh=a20cb74493c21e19e218def461bcd591&oe=5EF0D1ED&ig_cache_key=MjI5ODYxMjAzMDYzNjg2MzYwNQ%3D%3D.2"/> 
+			
+	<img class="crop-img" id="img2" src="https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-15/e35/s240x240/92953581_219834335909901_635515278363046888_n.jpg?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=109&_nc_ohc=_RSbTxd2U0gAX-mR7nz&oh=48e26a481e084bd9da293ea14f4658d0&oe=5EE7CDD2&ig_cache_key=MjI4NjMxNjE5Njc5Mzc0Nzc2OA%3D%3D.2"/> 
+<img class="crop-img" id="img3" src="https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-15/e35/p240x240/93060891_225085388599153_4011297045741284892_n.jpg?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=101&_nc_ohc=BcOSgzc5GiQAX8aGFyI&oh=9fa98c2b3ea3bd04ee698b2ed2fe89d7&oe=5EE63CE8&ig_cache_key=MjI4NjM3MzQzMDgzMTcxNzQ5NA%3D%3D.2"/>
+	<img class="crop-img" id="img4" src="https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-15/e35/s240x240/95213034_682737815884012_7923759738202950007_n.jpg?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=104&_nc_ohc=LX9QJmiewqQAX89AvD7&oh=79698ce9a602df8ef7f718e903220c49&oe=5EF2A09F&ig_cache_key=MjI5ODgwNDQwMDMwMTEwNDc5OQ%3D%3D.2"/> 
+			
+			<button id="forward" >Next</button>
+
+<img id="bigImage" class="large-img" src="https://scontent-lhr8-1.cdninstagram.com/v/t51.2885-15/e35/s240x240/95213034_682737815884012_7923759738202950007_n.jpg?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=104&_nc_ohc=LX9QJmiewqQAX89AvD7&oh=79698ce9a602df8ef7f718e903220c49&oe=5EF2A09F&ig_cache_key=MjI5ODgwNDQwMDMwMTEwNDc5OQ%3D%3D.2"/> 
+
+<script>
+		// whether the slideshow is paused or not
+		var paused = false;
+
+		// when you click on a thumbnail
+		// it sets the src of the big image
+		// to be the same as the image
+		// you clicked on
+		$(".crop-img").click(function(){
+			$("#bigImage").attr('src', 
+				$(this).attr('src'));
+		});
+
+		// the counter variable that keeps
+		// track of which image you are showing
+		var counter = 1;
+		// virtually click on the current
+		// image to load it into the big image
+		$("#img"+counter).click();
+
+		// when you click on the backwards
+		// button select the previous image
+		$("#backward").click(function (){
+			// go back one in the counter
+			counter = counter - 1;
+			// if we are below 1 (the first
+			// image) loop round to 4 (the
+			// last image)
+			if(counter < 1){
+				counter = 4;
+			}
+			// virtually click on the current
+			// image to load it into the big image
+			$("#img"+counter).click();
+		});
+
+		// when you click on the backwards
+		// button select the next image
+		$("#forward").click(function (){
+			// go forward one in the counter
+			counter = counter + 1;
+			// if we are above 4 (the last
+			// image) loop round to 1 (the
+			// first image)
+			if(counter > 4){
+				counter = 1;
+			}
+			// virtually click on the current
+			// image to load it into the big image
+			$("#img"+counter).click();
+		});
+
+		// when you click the big image 
+		// toggle pausing. Set paused to 
+		// not paused, i.e. if it is paused
+		// set it to not paused, if it is 
+		// not paused set it to paused
+		$("#bigImage").click(function (){
+			paused = !paused;
+		});
+
+		// set interval makes it move 
+		// forward every 3 second
+		setInterval(function (){
+			// first check if it is paused
+			if(!paused){
+				// virtual click the forward
+				// button
+				$("#forward").click();
+			};
+		}, 3000);
+	</script>
+
+
+
+</body>
+</html>
+
+
+
